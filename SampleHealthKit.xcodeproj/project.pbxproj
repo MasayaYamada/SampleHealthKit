@@ -15,6 +15,8 @@
 		F184AC09226FD2A2005A0CE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F184AC07226FD2A2005A0CE9 /* LaunchScreen.storyboard */; };
 		F184AC13226FD2F1005A0CE9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F184AC12226FD2F1005A0CE9 /* HealthKit.framework */; };
 		F1FF640422713D1D009185B6 /* CalenderLogicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF640322713D1D009185B6 /* CalenderLogicViewController.swift */; };
+		F1FF640622717DD8009185B6 /* ShowGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF640522717DD8009185B6 /* ShowGraphViewController.swift */; };
+		F1FF640A22719089009185B6 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF640922719089009185B6 /* DemoBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		F184AC10226FD2F1005A0CE9 /* SampleHealthKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleHealthKit.entitlements; sourceTree = "<group>"; };
 		F184AC12226FD2F1005A0CE9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F1FF640322713D1D009185B6 /* CalenderLogicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderLogicViewController.swift; sourceTree = "<group>"; };
+		F1FF640522717DD8009185B6 /* ShowGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGraphViewController.swift; sourceTree = "<group>"; };
+		F1FF640922719089009185B6 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 				F184AC10226FD2F1005A0CE9 /* SampleHealthKit.entitlements */,
 				F184ABFE226FD2A1005A0CE9 /* AppDelegate.swift */,
 				F184AC00226FD2A1005A0CE9 /* ViewController.swift */,
+				F1FF640922719089009185B6 /* DemoBaseViewController.swift */,
 				F184AC02226FD2A1005A0CE9 /* Main.storyboard */,
+				F1FF640522717DD8009185B6 /* ShowGraphViewController.swift */,
 				F1FF640322713D1D009185B6 /* CalenderLogicViewController.swift */,
 				F184AC05226FD2A2005A0CE9 /* Assets.xcassets */,
 				F184AC07226FD2A2005A0CE9 /* LaunchScreen.storyboard */,
@@ -109,7 +115,6 @@
 				F184ABF8226FD2A1005A0CE9 /* Frameworks */,
 				F184ABF9226FD2A1005A0CE9 /* Resources */,
 				84CDB7828CB79F6807FF24BF /* [CP] Embed Pods Frameworks */,
-				8544B27BA163A310C13F1202 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,8 +185,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SampleHealthKit/Pods-SampleHealthKit-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleHealthKit/Pods-SampleHealthKit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -189,30 +195,12 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalculateCalendarLogic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleHealthKit/Pods-SampleHealthKit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8544B27BA163A310C13F1202 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleHealthKit/Pods-SampleHealthKit-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleHealthKit/Pods-SampleHealthKit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6C31E53517B66FF3C7B74B9 /* [CP] Check Pods Manifest.lock */ = {
@@ -244,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FF640A22719089009185B6 /* DemoBaseViewController.swift in Sources */,
 				F1FF640422713D1D009185B6 /* CalenderLogicViewController.swift in Sources */,
 				F184AC01226FD2A1005A0CE9 /* ViewController.swift in Sources */,
+				F1FF640622717DD8009185B6 /* ShowGraphViewController.swift in Sources */,
 				F184ABFF226FD2A1005A0CE9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

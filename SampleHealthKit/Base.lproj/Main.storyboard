@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adda a button and link it as an outlet " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBI-tA-eHh">
-                                <rect key="frame" x="41" y="370" width="332.5" height="26"/>
+                                <rect key="frame" x="41" y="398" width="332.5" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -49,12 +49,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-uK-M0o">
-                                <rect key="frame" x="87" y="279" width="216" height="54"/>
+                                <rect key="frame" x="99" y="321" width="216" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Go to Calenter"/>
                                 <connections>
                                     <segue destination="o0O-iV-llh" kind="show" id="TZC-Zp-VYX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbs-MF-3VQ">
+                                <rect key="frame" x="116" y="267" width="182" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Go to Graph"/>
+                                <connections>
+                                    <segue destination="qO7-w8-k5B" kind="show" id="ifc-tN-v6O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,9 +76,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+            <point key="canvasLocation" x="122" y="246"/>
         </scene>
-        <!--Calender Logic View Controller-->
+        <!--Show Graph View Controller-->
+        <scene sceneID="yYy-3f-mTn">
+            <objects>
+                <viewController id="qO7-w8-k5B" customClass="ShowGraphViewController" customModule="SampleHealthKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="swH-OQ-SW4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiK-p5-a0g" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="26" y="73" width="368" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aiK-p5-a0g" firstAttribute="leading" secondItem="1uy-ei-pFY" secondAttribute="leading" constant="26" id="0fy-0Q-pk2"/>
+                            <constraint firstItem="aiK-p5-a0g" firstAttribute="top" secondItem="1uy-ei-pFY" secondAttribute="top" constant="29" id="2lG-g0-obx"/>
+                            <constraint firstItem="1uy-ei-pFY" firstAttribute="bottom" secondItem="aiK-p5-a0g" secondAttribute="bottom" constant="302" id="kCY-JQ-tAX"/>
+                            <constraint firstItem="1uy-ei-pFY" firstAttribute="trailing" secondItem="aiK-p5-a0g" secondAttribute="trailing" constant="20" id="pof-5Y-e2B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1uy-ei-pFY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="762-Mq-LaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="1024.5535714285713"/>
+        </scene>
+        <!--Delegate-->
         <scene sceneID="VUK-Iu-8WI">
             <objects>
                 <viewController id="o0O-iV-llh" customClass="CalenderLogicViewController" customModule="SampleHealthKit" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,33 +116,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-3y-Ydk" customClass="FSCalendar">
                                 <rect key="frame" x="20" y="44" width="374" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="o0O-iV-llh" id="dBg-XH-4u7"/>
+                                </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SampleSpace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-CJ-u8K">
-                                <rect key="frame" x="20" y="463" width="374" height="371"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ekd-CJ-u8K" secondAttribute="height" multiplier="374:371" id="Xwi-vG-xrQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C37-Bl-ZcG">
+                                <rect key="frame" x="41" y="754" width="332" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Back to main">
+                                    <color key="titleShadowColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="C37-Bl-ZcG" id="V00-N6-qH9">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SZX-3y-Ydk" firstAttribute="leading" secondItem="Oyc-61-Njb" secondAttribute="leading" constant="20" id="0pQ-rc-giG"/>
                             <constraint firstItem="SZX-3y-Ydk" firstAttribute="top" secondItem="Oyc-61-Njb" secondAttribute="top" id="6qz-f5-dOa"/>
-                            <constraint firstItem="Oyc-61-Njb" firstAttribute="bottom" secondItem="ekd-CJ-u8K" secondAttribute="bottom" constant="28" id="Kha-dL-YNP"/>
-                            <constraint firstItem="ekd-CJ-u8K" firstAttribute="leading" secondItem="Oyc-61-Njb" secondAttribute="leading" constant="20" id="SQF-Kq-rQi"/>
+                            <constraint firstItem="C37-Bl-ZcG" firstAttribute="leading" secondItem="Oyc-61-Njb" secondAttribute="leading" constant="41" id="SHV-x9-Yhs"/>
+                            <constraint firstItem="Oyc-61-Njb" firstAttribute="bottom" secondItem="C37-Bl-ZcG" secondAttribute="bottom" constant="60" id="bq7-OG-sdB"/>
                             <constraint firstItem="Oyc-61-Njb" firstAttribute="trailing" secondItem="SZX-3y-Ydk" secondAttribute="trailing" constant="20" id="cQt-0X-hHL"/>
-                            <constraint firstItem="Oyc-61-Njb" firstAttribute="trailing" secondItem="ekd-CJ-u8K" secondAttribute="trailing" constant="20" id="fCc-Mt-ARJ"/>
-                            <constraint firstItem="ekd-CJ-u8K" firstAttribute="top" secondItem="SZX-3y-Ydk" secondAttribute="bottom" constant="16" id="tnN-L6-ou0"/>
+                            <constraint firstItem="C37-Bl-ZcG" firstAttribute="top" secondItem="SZX-3y-Ydk" secondAttribute="bottom" constant="307" id="l10-T0-bm5"/>
+                            <constraint firstItem="Oyc-61-Njb" firstAttribute="trailing" secondItem="C37-Bl-ZcG" secondAttribute="trailing" constant="41" id="mEY-Nm-rOg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oyc-61-Njb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTF-pp-Jhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1214" y="205"/>
         </scene>
     </scenes>
 </document>

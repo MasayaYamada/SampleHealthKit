@@ -6,7 +6,7 @@ target 'SampleHealthKit' do
   use_frameworks!
   pod 'FSCalendar'
   pod 'CalculateCalendarLogic' 
-
+  pod 'Charts'
   # Pods for SampleHealthKit
 
 end
