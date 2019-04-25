@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleHealthKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adda a button and link it as an outlet " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBI-tA-eHh">
+                                <rect key="frame" x="41" y="370" width="332.5" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-Kh-cUU">
+                                <rect key="frame" x="158" y="438" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Health Access"/>
+                                <connections>
+                                    <action selector="healthAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7N5-As-pL6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJJ-cc-VpY">
+                                <rect key="frame" x="173" y="490" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Get Steps"/>
+                                <connections>
+                                    <action selector="getSteps:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yZp-mh-zSh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOd-lm-ofG">
+                                <rect key="frame" x="87" y="545" width="240" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-uK-M0o">
+                                <rect key="frame" x="87" y="279" width="216" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Go to Calenter"/>
+                                <connections>
+                                    <segue destination="o0O-iV-llh" kind="show" id="TZC-Zp-VYX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="totalSteps" destination="yOd-lm-ofG" id="ZuI-Pc-shZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+        </scene>
+        <!--Calender Logic View Controller-->
+        <scene sceneID="VUK-Iu-8WI">
+            <objects>
+                <viewController id="o0O-iV-llh" customClass="CalenderLogicViewController" customModule="SampleHealthKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxz-P0-eEw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-3y-Ydk" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="44" width="374" height="403"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SampleSpace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-CJ-u8K">
+                                <rect key="frame" x="20" y="463" width="374" height="371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ekd-CJ-u8K" secondAttribute="height" multiplier="374:371" id="Xwi-vG-xrQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SZX-3y-Ydk" firstAttribute="leading" secondItem="Oyc-61-Njb" secondAttribute="leading" constant="20" id="0pQ-rc-giG"/>
+                            <constraint firstItem="SZX-3y-Ydk" firstAttribute="top" secondItem="Oyc-61-Njb" secondAttribute="top" id="6qz-f5-dOa"/>
+                            <constraint firstItem="Oyc-61-Njb" firstAttribute="bottom" secondItem="ekd-CJ-u8K" secondAttribute="bottom" constant="28" id="Kha-dL-YNP"/>
+                            <constraint firstItem="ekd-CJ-u8K" firstAttribute="leading" secondItem="Oyc-61-Njb" secondAttribute="leading" constant="20" id="SQF-Kq-rQi"/>
+                            <constraint firstItem="Oyc-61-Njb" firstAttribute="trailing" secondItem="SZX-3y-Ydk" secondAttribute="trailing" constant="20" id="cQt-0X-hHL"/>
+                            <constraint firstItem="Oyc-61-Njb" firstAttribute="trailing" secondItem="ekd-CJ-u8K" secondAttribute="trailing" constant="20" id="fCc-Mt-ARJ"/>
+                            <constraint firstItem="ekd-CJ-u8K" firstAttribute="top" secondItem="SZX-3y-Ydk" secondAttribute="bottom" constant="16" id="tnN-L6-ou0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Oyc-61-Njb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTF-pp-Jhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034.7826086956522" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
