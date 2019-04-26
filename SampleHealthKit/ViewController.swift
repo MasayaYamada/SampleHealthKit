@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     // インスタンス生成
     let healthStore = HKHealthStore()
+    
+    // 歩数の取得
+    var resultTodaySteps: Double? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,8 +102,17 @@ class ViewController: UIViewController {
             print("\(result)")
             DispatchQueue.main.async {
                 self.totalSteps.text = "\(result)"
+                self.resultTodaySteps = result
+                
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 遷移時に歩数を渡すコード
+        let nextVC = segue.destination as! ShowGraphViewController
+        nextVC.getStepToday = self.resultTodaySteps
+        
     }
     
 }
