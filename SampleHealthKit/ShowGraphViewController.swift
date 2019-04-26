@@ -33,6 +33,10 @@ class ShowGraphViewController: UIViewController {
     func horizontaBarChartUpdate () {
         
         // 基本的なチャートの書き方
+        if getStepToday == nil {
+            getStepToday = 0.0
+        }
+        
         // データの挿入
         let entry1 = BarChartDataEntry(x: 1.0, y: getStepToday!)
         let entry2 = BarChartDataEntry(x: 2.0, y: testData)

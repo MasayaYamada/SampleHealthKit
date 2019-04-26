@@ -63,7 +63,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Go to Graph"/>
                                 <connections>
-                                    <segue destination="qO7-w8-k5B" kind="show" id="ifc-tN-v6O"/>
+                                    <segue destination="qO7-w8-k5B" kind="show" identifier="toShowGraphViewController" id="ifc-tN-v6O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,6 +89,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiK-p5-a0g" customClass="HorizontalBarChartView" customModule="Charts">
                                 <rect key="frame" x="26" y="73" width="368" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="toShowGraphViewController"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHG-Rq-jJF">
                                 <rect key="frame" x="54" y="740" width="307" height="48"/>
@@ -116,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="762-Mq-LaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121.73913043478262" y="1024.5535714285713"/>
+            <point key="canvasLocation" x="-1449" y="603"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="VUK-Iu-8WI">

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let healthStore = HKHealthStore()
     
     // 取得した歩数を入れるための変数
-    var resultTodaySteps: Double? = nil
+    var resultTodaySteps: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,10 +110,15 @@ class ViewController: UIViewController {
     
     // Segue で値を渡す際の関数
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        // storyboard上でidentifierを設定する
+        if segue.identifier == "toShowGraphViewController" {
         // 遷移時に歩数を渡すコード
         let nextVC = segue.destination as! ShowGraphViewController
+        print("segue \(nextVC)")
         // 渡し先の変数を定義する。
-        nextVC.getStepToday = self.resultTodaySteps
+            nextVC.getStepToday = self.resultTodaySteps
+    }
         
     }
     
