@@ -11,10 +11,10 @@ import HealthKit
 
 class ViewController: UIViewController {
     
-    // インスタンス生成
+    // HealthKit インスタンス生成
     let healthStore = HKHealthStore()
     
-    // 歩数の取得
+    // 取得した歩数を入れるための変数
     var resultTodaySteps: Double? = nil
 
     override func viewDidLoad() {
@@ -108,9 +108,11 @@ class ViewController: UIViewController {
         }
     }
     
+    // Segue で値を渡す際の関数
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 遷移時に歩数を渡すコード
         let nextVC = segue.destination as! ShowGraphViewController
+        // 渡し先の変数を定義する。
         nextVC.getStepToday = self.resultTodaySteps
         
     }

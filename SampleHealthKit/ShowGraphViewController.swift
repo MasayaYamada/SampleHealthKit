@@ -17,14 +17,8 @@ class ShowGraphViewController: UIViewController {
     // 歩数受け取り用変数
     var getStepToday: Double?
     
-    // 各ラインのテスト値
-    var number1 = 2.0
-    var number2 = 4.0
-    var number3 = 12.0
-    
-    @IBAction func renderCharts() {
-        horizontaBarChartUpdate()
-    }
+    // テストデータ
+    let testData = 1200.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +32,17 @@ class ShowGraphViewController: UIViewController {
     
     func horizontaBarChartUpdate () {
         
-        // Basic set up of plan chart
+        // 基本的なチャートの書き方
+        // データの挿入
         let entry1 = BarChartDataEntry(x: 1.0, y: getStepToday!)
-        let entry2 = BarChartDataEntry(x: 2.0, y: number2)
-        let entry3 = BarChartDataEntry(x: 3.0, y: number3)
-        let dataSet = BarChartDataSet(values: [entry1, entry2, entry3], label: "Widgets Type")
+        let entry2 = BarChartDataEntry(x: 2.0, y: testData)
+        //データのセット
+        let dataSet = BarChartDataSet(values: [entry1, entry2], label: "Sample Show Case")
         let data = BarChartData(dataSets: [dataSet])
+        // チャートの表示
         horizontalBarChart.data = data
-        
-        // Color
+        // Color の設定
         dataSet.colors = ChartColorTemplates.vordiplom()
-        
-        // Refresh chart with new data
-        horizontalBarChart.notifyDataSetChanged()
     }
     
     
